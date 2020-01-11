@@ -10,5 +10,17 @@ module.exports = {
     title: "Damon's Blog",
   },
 
-  plugins: ["gatsby-plugin-sass"],
+  plugins: [
+    "gatsby-plugin-sass",
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "files",
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+
+    "gatsby-transformer-remark"
+  ]
 }
